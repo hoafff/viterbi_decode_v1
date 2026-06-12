@@ -1,0 +1,41 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2026 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[11:28:02.483697] Configured Lic search path (23.02-s006): /home/cadence/license/license.dat
+
+Version: 23.17-s085_1, built Thu Feb 05 22:53:16 PST 2026
+Options: 
+Date:    Sat May 16 11:28:02 2026
+Host:    iclab (x86_64 w/Linux 4.18.0-553.111.1.el8_10.x86_64) (8cores*32cpus*4physical cpus*Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz 40960KB) (131474472KB)
+PID:     3726667
+OS:      Red Hat Enterprise Linux 8.10 (Ootpa)
+
+Checking out license: Genus_Synthesis
+[11:28:02.308442] Periodic Lic check successful
+[11:28:02.832741] Feature usage summary:
+[11:28:02.832742] Genus_Synthesis
+License checkout complete (0 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (11 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (23 seconds elapsed).
+
+WARNING: The genus.tcl file in the current directory /home/iclab6/Desktop/viterbi/synthesis is no longer loaded at startup.
+         You should change the name to genus_startup.tcl if you want it loaded at startup.
+@genus:root: 1> exit
+
+Lic Summary:
+[11:28:57.001232] cdslmd servers: /home/cadence/license/license.dat
+[11:28:57.016576] Feature usage summary:
+[11:28:57.104199]   Genus_Synthesis  
+
+Normal exit.

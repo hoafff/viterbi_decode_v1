@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l \"D:/NHÓM-6-final/2.viterbi code +setup/viterbi_p5_implementation.md\")",
+      "Bash(mkdir -p \"D:/NHÓM-6-final/2.viterbi code +setup/rtl_v1\" && ls -la \"D:/NHÓM-6-final/2.viterbi code +setup/rtl_v1\")",
+      "Bash(winget --version)",
+      "Bash(choco --version)",
+      "Bash(winget install *)",
+      "Bash(curl -L -o /tmp/iverilog.zip \"https://github.com/steveicarus/iverilog/releases/download/v11_0/iverilog-v11-20210209-x86_64-pc-mingw.zip\")",
+      "Bash(cat /tmp/iverilog.zip 2>&1 | head -5; ls -la /tmp/iverilog.zip 2>&1)",
+      "Bash(curl -sL -o /tmp/iverilog_setup.exe \"https://bleyer.org/iverilog/iverilog-v12.0-x86_64-setup.exe\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

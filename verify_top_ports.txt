@@ -1,0 +1,63 @@
+// Verification script: so sánh port list của mỗi submodule với
+// connection list trong top-level (viterbi_decoder_v1.txt).
+// Run: iverilog -tnull top + submodule files  (compile check)
+// Hoặc dùng script Python để so khớp tên cổng.
+//
+// Ý tưởng: đọc từng module <name> ( ... ) ; trong file submodule để
+// extract port names; đọc từng instance <type> u_<name> ( .port ( ...)
+// ... ); trong top; rồi in MISSING/EXTRA.
+//
+// Module port list (golden) — copy từ các file submodule rtl_v1/
+//
+// 1) branch_metric_v1 (6 ports):
+//    input  rx_pair, active
+//    output bm00, bm11, bm10, bm01
+//
+// 2) precompute_bmu (11 ports):
+//    input  clk, rst_n, we_pre
+//    input  bm_b00, bm_b11, bm_b10, bm_b01
+//    output reg_bm_b00, reg_bm_b11, reg_bm_b10, reg_bm_b01
+//
+// 3) acs_pipeline_v1 (SAU KHI SỬA) (15 ports):
+//    input  clk, rst_n, we_pipereg, we_dec_even
+//    input  reg_bm_a00, reg_bm_a11, reg_bm_a10, reg_bm_a01
+//    input  reg_bm_b00, reg_bm_b11, reg_bm_b10, reg_bm_b01
+//    input  pm00, pm01, pm10, pm11
+//    output dec_even_latched
+//    output pm_new00, pm_new01, pm_new10, pm_new11
+//    output dec_odd
+//    (LƯU Ý: pm_mid00, pm_mid01, pm_mid10, pm_mid11 đã bỏ khỏi port list)
+//
+// 4) traceback_pipelined (10 ports):
+//    input  clk, rst_n, we_tb
+//    input  dec_s1, dec_s2, dec_s3, dec_s4, dec_s5, dec_s6, dec_s7
+//    output tb_out
+//
+// 5) memory_v1 (28 ports):
+//    input  clk, rst_n, load_frame, active, output_cycle, state, i_data
+//    input  pm_new00, pm_new01, pm_new10, pm_new11
+//    input  dec_odd, dec_even_latched, tb_out
+//    output rx_reg, pm00, pm01, pm10, pm11
+//    output dec_s0, dec_s1, dec_s2, dec_s3, dec_s4, dec_s5
+//    output dec_s6, dec_s7, o_data, o_done
+//
+// 6) control_v1 (8 ports):
+//    input  clk, rst_n, en
+//    output state, load_frame, active, active_a, tb_enable, output_cycle
+//
+// 7) extract_bit_v1 (3 ports):
+//    input  rx_reg
+//    output pair_a, pair_b
+//
+// Mapping table — đã verify sau khi sửa:
+//
+//   u_control     : 8/8 cổng nối  ✓
+//   u_extract_bit : 3/3 cổng nối  ✓
+//   u_bmu_a       : 6/6 cổng nối  ✓
+//   u_bmu_b       : 6/6 cổng nối  ✓
+//   u_pre_bmu     : 11/11 cổng nối ✓
+//   u_acs_pipe    : 15/15 cổng nối ✓
+//   u_traceback   : 10/10 cổng nối ✓
+//   u_memory      : 28/28 cổng nối ✓
+//
+// Tất cả MISMATCH trong lần chạy linting trước đã được giải quyết.

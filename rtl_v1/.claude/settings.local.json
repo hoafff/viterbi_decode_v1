@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"D:/NHÓM-6-final/2.viterbi code +setup/\" 2>&1 | head -40)"
+    ]
+  }
+}

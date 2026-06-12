@@ -1,0 +1,310 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sun May 17 20:13:23 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.37-s090_1 (64bit) 02/09/2026 16:09 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.37-s090_1 NR260126-2134/23_17-UB (database version 18.20.682_1) {superthreading v2.20}
+#@(#)CDS: AAE 23.17-s025 (64bit) 02/09/2026 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.17-s038_1 () Feb  4 2026 22:23:13 ( )
+#@(#)CDS: SYNTECH 23.17-s006_1 () Jan 20 2026 01:15:57 ( )
+#@(#)CDS: CPE v23.17-s060
+#@(#)CDS: IQuantus/TQuantus 23.1.1-s583 (64bit) Mon Nov 24 21:09:39 PST 2025 (Linux 3.10.0-693.el7.x86_64)
+
+set_db init_power_nets VDD
+set_db init_ground_nets VSS
+read_mmmc viterbi_mmmc.view
+#@ Begin verbose source viterbi_mmmc.view (pre)
+create_library_set -name max_timing \
+    -timing ../lib/sky130_ss_1.62_125_nldm.lib
+create_library_set -name min_timing \
+    -timing ../lib/sky130_ff_1.98_0_nldm.lib
+create_timing_condition -name default_mapping_tc_1 \
+    -library_sets max_timing
+create_timing_condition -name default_mapping_tc_2 \
+    -library_sets min_timing
+create_rc_corner -name rccorners\
+    -pre_route_res 1\
+    -pre_route_cap 1\
+    -post_route_res 1\
+    -post_route_cap 1\
+    -post_route_cross_cap 1\
+    -pre_route_clock_res 0\
+    -pre_route_clock_cap 0\
+    -qrc_tech ../qrc/qrcTechFile_RCgen
+create_delay_corner -name max_delay\
+    -timing_condition default_mapping_tc_1\
+    -rc_corner rccorners
+create_delay_corner -name min_delay\
+    -timing_condition default_mapping_tc_2\
+    -rc_corner rccorners
+create_constraint_mode -name sdc_cons\
+    -sdc_files viterbi_sdc.sdc
+create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+set_analysis_view -setup wc -hold bc
+#@ End verbose source viterbi_mmmc.view
+check_pin_assignment 
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Top -layer 2 -spread_type center -spacing 6 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Bottom -layer 1 -spread_type center -spacing 2 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+gui_select -point {57.03700 57.90700}
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Top -layer 1 -spread_type center -spacing 2.3 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Top -layer 1 -spread_type center -spacing 9 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Top -layer 2 -spread_type center -spacing 5 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+set_db assign_pins_edit_in_batch true
+edit_pin -pin_width 0.14 -pin_depth 0.595 -fix_overlap 1 -unit micron -spread_direction clockwise -side Top -layer 2 -spread_type center -spacing 5.06 -pin {rst_n en clk}
+set_db assign_pins_edit_in_batch false
+gui_select -point {119.81100 69.27300}
+check_pin_assignment 
+set_db add_rings_target default
+set_db add_rings_extend_over_row 0
+set_db add_rings_ignore_rows 0
+set_db add_rings_avoid_short 0
+set_db add_rings_skip_shared_inner_ring none
+set_db add_rings_stacked_via_top_layer met5
+set_db add_rings_stacked_via_bottom_layer met1
+set_db add_rings_via_using_exact_crossover_size 1
+set_db add_rings_orthogonal_only true
+set_db add_rings_skip_via_on_pin {  standardcell }
+set_db add_rings_skip_via_on_wire_shape {  noshape }
+add_rings -nets {VDD VSS} -type core_rings -follow core -layer {top met5 bottom met5 left met4 right met4} -width {top 3 bottom 3 left 3 right 3} -spacing {top 1.7 bottom 1.7 left 1.7 right 1.7} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 1 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid none
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -start_offset 5 -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+gui_select -point {120.45700 76.76500}
+gui_select -point {45.15400 65.65700}
+gui_select -point {38.30800 63.84900}
+gui_select -point {38.82500 62.94400}
+gui_select -point {39.21300 56.74400}
+gui_select -point {35.46700 59.32800}
+gui_select -point {15.70500 60.10300}
+gui_select -point {15.44600 60.23200}
+gui_select -point {13.89600 60.23200}
+gui_select -point {11.83000 58.94000}
+gui_select -point {11.05500 58.55300}
+gui_select -point {14.67100 57.00300}
+delete_selected_from_floorplan
+gui_select -point {10.66700 53.77400}
+delete_selected_from_floorplan
+gui_select -point {36.88800 51.83600}
+delete_selected_from_floorplan
+gui_select -point {39.72900 51.70700}
+delete_selected_from_floorplan
+gui_select -point {58.71700 48.86500}
+gui_select -point {59.75000 48.47800}
+delete_selected_from_floorplan
+gui_select -point {62.72100 47.83200}
+gui_select -point {61.17100 47.70300}
+delete_selected_from_floorplan
+gui_select -point {63.62500 48.34900}
+gui_select -point {64.14100 48.34900}
+delete_selected_from_floorplan
+gui_select -point {85.45400 45.50700}
+delete_selected_from_floorplan
+gui_select -point {89.45800 43.31100}
+delete_selected_from_floorplan
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -start_offset 5 -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target none
+set_db add_stripes_stop_at_last_wire_for_area false
+set_db add_stripes_partial_set_through_domain false
+set_db add_stripes_ignore_non_default_domains false
+set_db add_stripes_trim_antenna_back_to_shape none
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_stripe_min_length stripe_width
+set_db add_stripes_stacked_via_top_layer met5
+set_db add_stripes_stacked_via_bottom_layer met1
+set_db add_stripes_via_using_exact_crossover_size false
+set_db add_stripes_split_vias false
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+add_stripes -nets {VDD VSS} -layer met4 -direction vertical -width 1.8 -spacing 1.8 -set_to_set_distance 25 -start_from left -start_offset 5 -switch_layer_over_obs false -max_same_layer_jog_length 2 -pad_core_ring_top_layer_limit met5 -pad_core_ring_bottom_layer_limit met1 -block_ring_top_layer_limit met5 -block_ring_bottom_layer_limit met1 -use_wire_group 0 -snap_wire_center_to_grid none
+gui_select -point {37.01700 62.68600}
+connect_global_net VDD -type pg_pin -pin_base_name VDD -inst_base_name *
+connect_global_net VSS -type pg_pin -pin_base_name VSS -inst_base_name *
+set_db route_special_via_connect_to_shape { stripe }
+route_special -connect core_pin -layer_change_range { met1(1) met5(5) } -block_pin_target nearest_target -core_pin_target first_after_row_end -allow_jogging 1 -crossover_via_layer_range { met1(1) met5(5) } -nets { VDD VSS } -allow_layer_change 1 -target_via_layer_range { met1(1) met5(5) }
+set_db route_special_via_connect_to_shape { stripe }
+route_special -connect core_pin -layer_change_range { met1(1) met5(5) } -block_pin_target nearest_target -core_pin_target first_after_row_end -allow_jogging 1 -crossover_via_layer_range { met1(1) met5(5) } -nets { VDD VSS } -allow_layer_change 1 -target_via_layer_range { met1(1) met5(5) }
+place_opt_design
+write_db placeOpt
+create_clock_tree_spec
+clock_opt_design
+write_db postCTSOpt
+set_db timing_analysis_type ocv
+time_design -post_route
+time_design -post_route -hold
+check_drc
+check-connectivity
+reset_parasitics
+extract_rc
+write_parasitics -spef_file viterbi_decoder.spef -rc_corner rccorners
+set_db route_detail_fix_antenna 1
+set_db route_antenna_diode_insertion 0
+set_db route_with_timing_driven 1
+set_db route_with_eco 0
+set_db route_with_litho_driven 0
+set_db route_detail_post_route_litho_repair 0
+set_db route_with_si_driven 1
+set_db route_detail_auto_stop 0
+set_db route_selected_net_only 0
+set_db route_detail_end_iteration 1
+set_db route_with_timing_driven true
+set_db route_with_si_driven true
+route_design -global_detail
+write_db postCTSOpt
+set_db timing_analysis_type ocv
+time_design -post_route
+check_drc
+check-connectivity
+gui_select -point {-25.11100 47.57400}
+add_fillers -base_cells FILL_DECAP8 FILL_DECAP16 FILL8 FILL64 FILL4 FILL32 FILL2 FILL16 FILL1 -prefix FILLER
+check_drc
+check-connectivity
+write_db postRau
+report_power  > reports/report_power.rpt
+report_area   > reports/report_area.rpt
+report_gates  > reports/report_gates.rpt
+report_timing > reports/report_timing.rpt
+write_db postRau
+set_db route_detail_fix_antenna 1
+set_db route_antenna_diode_insertion 0
+set_db route_with_timing_driven 1
+set_db route_with_eco 0
+set_db route_with_litho_driven 0
+set_db route_detail_post_route_litho_repair 0
+set_db route_with_si_driven 1
+set_db route_selected_net_only 0
+set_db route_with_timing_driven true
+set_db route_with_si_driven true
+route_design -global_detail
+check_drc
+check-connectivity
+report_power  > reports/report_power.rpt
+report_area   > reports/report_area.rpt
+report_gates  > reports/report_gates.rpt
+report_timing > reports/report_timing.rpt
+write_db postRouteOpt
+set_layer_preference node_net -is_visible 0
+set_layer_preference node_net -is_visible 1
+set_layer_preference node_net -is_visible 0
+set_layer_preference node_net -is_visible 1

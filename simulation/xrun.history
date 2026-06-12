@@ -1,0 +1,2 @@
+#e1(17May2026:16:10:27): source ./xcelium.d/env.d/env.history.17May2026_16_10_27
+s1(17May2026:16:10:27):  xrun add_comp_slt.v control.v memory.v traceback.v branch_metric.v extract_bit.v tb_viterbi_readmemb.v viterbi_decoder.v -access +rwc -gui 

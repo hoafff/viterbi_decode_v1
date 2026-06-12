@@ -1,0 +1,12 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+/home/iclab6/Desktop/viterbi/simulation/add_comp_slt.v
+/home/iclab6/Desktop/viterbi/simulation/control.v
+/home/iclab6/Desktop/viterbi/simulation/memory.v
+/home/iclab6/Desktop/viterbi/simulation/traceback.v
+/home/iclab6/Desktop/viterbi/simulation/branch_metric.v
+/home/iclab6/Desktop/viterbi/simulation/extract_bit.v
+/home/iclab6/Desktop/viterbi/simulation/tb_viterbi_readmemb.v
+/home/iclab6/Desktop/viterbi/simulation/viterbi_decoder.v

@@ -1,0 +1,255 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v23.37-s090_1, built Mon Feb 9 16:09:58 PST 2026
+Options:	-stylus 
+Date:		Sun May 17 16:51:48 2026
+Host:		iclab (x86_64 w/Linux 4.18.0-553.111.1.el8_10.x86_64) (8cores*32cpus*Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz 40960KB)
+OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+
+License:
+		[16:51:48.483785] Configured Lic search path (23.02-s006): /home/cadence/license/license.dat
+
+		invs	Innovus Implementation System	23.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /home/iclab6/Desktop/viterbi/physical_design/innovus_temp_69389_c3463e12-2510-4469-97d5-83976c0c171b_iclab_iclab6_8Yx7cI.
+
+Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+Info: Process UID = 69389 / c3463e12-2510-4469-97d5-83976c0c171b / 4NeFk4xgzK
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> set_db init_power_nets VDD
+@innovus 2> set_db init_ground_nets VSS
+@innovus 3> #################################
+read_mmmc viterbi_mmmc.view
+#################################
+#@ Begin verbose source viterbi_mmmc.view (pre)
+@@file 1: create_library_set -name max_timing \
+    -timing ../lib/sky130_ss_1.62_125_nldm.lib
+@file 3:
+@@file 4: create_library_set -name min_timing \
+    -timing ../lib/sky130_ff_1.98_0_nldm.lib
+@file 6:
+@@file 7: create_timing_condition -name default_mapping_tc_1 \
+    -library_sets max_timing
+@file 9:
+@@file 10: create_timing_condition -name default_mapping_tc_2 \
+    -library_sets min_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+    -pre_route_res 1\
+    -pre_route_cap 1\
+    -post_route_res 1\
+    -post_route_cap 1\
+    -post_route_cross_cap 1\
+    -pre_route_clock_res 0\
+    -pre_route_clock_cap 0\
+    -qrc_tech ../qrc/qrcTechFile_RCgen
+@file 22:
+@@file 23: create_delay_corner -name max_delay\
+    -timing_condition default_mapping_tc_1\
+    -rc_corner rccorners
+@file 26:
+@@file 27: create_delay_corner -name min_delay\
+    -timing_condition default_mapping_tc_2\
+    -rc_corner rccorners
+@file 30:
+@@file 31: create_constraint_mode -name sdc_cons\
+    -sdc_files viterbi_sdc.sdc
+@file 33:
+@@file 34: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+@@file 35: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+@file 36:
+@@file 37: set_analysis_view -setup wc -hold bc
+#@ End verbose source viterbi_mmmc.view
+Reading max_timing timing library '/home/iclab6/Desktop/viterbi/lib/sky130_ss_1.62_125_nldm.lib' ...
+Read 112 cells in library 'sky130_ss_1.62_125' 
+Reading min_timing timing library '/home/iclab6/Desktop/viterbi/lib/sky130_ff_1.98_0_nldm.lib' ...
+Read 112 cells in library 'sky130_ff_1.98_0' 
+#################################
+read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}
+#################################
+
+Loading LEF file ../lef/sky130_scl_9T.tlef ...
+
+Loading LEF file ../lef/sky130_scl_9T.lef ...
+Set DBUPerIGU to M2 pitch 460.
+
+Loading LEF file ../lef/sky130_scl_9T_phyCells.lef ...
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+#################################
+read_netlist viterbi_netlist.v
+#################################
+#% Begin Load netlist data ... (date=05/17 16:56:29, mem=1917.3M)
+*** Begin netlist parsing (mem=1885.5M) ***
+Created 112 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'viterbi_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1885.520M, initial mem = 866.945M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1885.5M) ***
+#% End Load netlist data ... (date=05/17 16:56:29, total cpu=0:00:00.1, real=0:00:00.0, peak res=1928.2M, current mem=1928.2M)
+Top level cell is viterbi_decoder.
+Hooked 224 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell viterbi_decoder ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 237 modules.
+** info: there are 281 stdCell insts.
+** info: there are 281 stdCell insts with at least one signal pin.
+
+*** Memory Usage v#1 (Current mem = 1924.020M, initial mem = 866.945M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Generated pitch 3.66 in met5 is different from 3.22 defined in technology file in preferred direction.
+Generated pitch 0.615 in met4 is different from 0.69 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.69 defined in technology file in preferred direction.
+Extraction setup Started for TopCell viterbi_decoder 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For post_route extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Importing multi-corner technology file(s) for preRoute extraction...
+../qrc/qrcTechFile_RCgen
+Generating auto layer map file.
+Completed (cpu: 0:00:01.3 real: 0:00:02.0)
+Set Shrink Factor to 1.00000
+Summary of Active RC-Corners : 
+ 
+ Analysis View: wc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../qrc/qrcTechFile_RCgen'
+ 
+ Analysis View: bc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../qrc/qrcTechFile_RCgen'
+Updating RC Grid density data for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+Default value for post_route extraction mode's extract_rc_effort_level (extract_rc_effort_level option of set_db) changed to 'medium'.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file 'viterbi_sdc.sdc' ...
+Current (total cpu=0:01:40, real=0:04:45, peak res=2585.0M, current mem=2585.0M)
+viterbi_decoder
+INFO (CTE): Constraints read successfully.
+------------------------------------------------------------------------------------
+CONSTRAINT READING SUMMARY                                                          
+------------------------------------------------------------------------------------
+Constraint                                        | Success        | Fail           
+------------------------------------------------------------------------------------
+set_clock_uncertainty                             | 2              | 0              
+get_lib_cells                                     | 8              | 0              
+set_wire_load_mode                                | 1              | 0              
+set_output_delay                                  | 9              | 0              
+set_input_delay                                   | 18             | 0              
+get_clocks                                        | 29             | 0              
+create_clock                                      | 1              | 0              
+set_dont_use                                      | 8              | 0              
+set_clock_gating_check                            | 1              | 0              
+get_ports                                         | 37             | 0              
+current_design                                    | 1              | 0              
+set_load                                          | 9              | 0              
+set_units                                         | 2              | 0              
+------------------------------------------------------------------------------------
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2599.6M, current mem=2599.6M)
+Current (total cpu=0:01:40, real=0:04:45, peak res=2599.6M, current mem=2599.6M)
+Total number of combinational cells: 85
+Total number of sequential cells: 24
+Total number of tristate cells: 3
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: CLKBUFX2 BUFX2 CLKBUFX4 BUFX4 CLKBUFX8 BUFX8 BUFX16
+Total number of usable buffers: 7
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 CLKINVX2 CLKINVX1 INVX4 CLKINVX4 INVX8 CLKINVX8 INVX16
+Total number of usable inverters: 9
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X4 DLY4X4
+Total number of identified usable delay cells: 4
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#################################
+read_mmmc viterbi_mmmc.view
+#################################
+**WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc viterbi_mmmc.view'.For more details, refer to error message from console.
+
+#################################
+read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}
+#################################
+**ERROR: (IMPIMEX-7030):	LEF files are not allowed to be read in after the design is in memory. If you want to modify the current list of LEF files, please refer to read_physical -add_lefs**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}'.For more details, refer to error message from console.
+
+#################################
+read_netlist viterbi_netlist.v
+#################################
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist viterbi_netlist.v'.For more details, refer to error message from console.
+
+**ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+The MMMC init sequence looks like this: 
+read_mmmc top.mmmc 
+read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+read_netlist top.v 
+read_power_intent -1801 top.1801	    #only for MSV designs 
+init_design 
+
+Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+read_libs all.lib 
+read_netlist top.v 
+read_sdc top.sdc 
+init_design 
+
+See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+Common UI User Guide for more details.
+exit
+*** Message Summary: 4 warning(s), 6 error(s)
+
+
+*** Memory Usage v#1 (Current mem = 2621.988M, initial mem = 866.945M) ***
+--- Ending "Innovus" (totcpu=0:02:03, real=0:10:15, mem=2622.0M) ---

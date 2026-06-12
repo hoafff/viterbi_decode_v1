@@ -1,0 +1,1 @@
+/home/iclab6/Desktop/viterbi/physical_design/innovus_temp_255622_b8723113-3c73-43a6-90c3-dfedcd2e373d_iclab_iclab6_SbLl3S/nr255622_ykxU1j.rcdb.d

@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.25.09.d
+-RUNMODE
+add_comp_slt.v
+control.v
+memory.v
+traceback.v
+branch_metric.v
+extract_bit.v
+tb_viterbi_readmemb.v
+viterbi_decoder.v
+-CDSLIB
+./xcelium.d/run.lnx8664.25.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.25.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.25.09.d/xllibs
+-ALLOWUNBOUND

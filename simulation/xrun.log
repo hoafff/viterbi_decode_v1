@@ -1,0 +1,120 @@
+xrun(64): 25.09-s004: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s004: Started on May 17, 2026 at 16:10:27 +07
+xrun
+	add_comp_slt.v
+	control.v
+	memory.v
+	traceback.v
+	branch_metric.v
+	extract_bit.v
+	tb_viterbi_readmemb.v
+	viterbi_decoder.v
+	-access +rwc
+	-gui
+file: add_comp_slt.v
+	module worklib.add_comp_slt:v
+		errors: 0, warnings: 0
+file: control.v
+	module worklib.control:v
+		errors: 0, warnings: 0
+file: memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: traceback.v
+	module worklib.traceback:v
+		errors: 0, warnings: 0
+file: branch_metric.v
+	module worklib.branch_metric:v
+		errors: 0, warnings: 0
+file: extract_bit.v
+	module worklib.extract_bit:v
+		errors: 0, warnings: 0
+file: tb_viterbi_readmemb.v
+	module worklib.tb_viterbi_readmemb:v
+		errors: 0, warnings: 0
+file: viterbi_decoder.v
+	module worklib.viterbi_decoder:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		worklib.tb_viterbi_readmemb:v (module)
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.memory:v <0x5dac8742>
+			streams:  26, words: 10601
+		worklib.traceback:v <0x1640ca08>
+			streams:   1, words:  2672
+		worklib.add_comp_slt:v <0x21641299>
+			streams:  24, words:  4624
+		worklib.branch_metric:v <0x6ffc081d>
+			streams:   1, words:   516
+		worklib.extract_bit:v <0x6017e028>
+			streams:   2, words:   376
+		worklib.control:v <0x73f7e778>
+			streams:   4, words:  2047
+		worklib.tb_viterbi_readmemb:v <0x750bb7b2>
+			streams:   7, words:  9861
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                10       8
+		Registers:              27      27
+		Scalar wires:           23       -
+		Vectored wires:         66       -
+		Always blocks:          11      11
+		Initial blocks:          2       2
+		Cont. assignments:      58      40
+		Pseudo assignments:      4       -
+		Process Clocks:          9       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_viterbi_readmemb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to Verisium Debug/SimVision...
+xcelium> 
+xcelium> source /home/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_viterbi_readmemb.dut.dec_s2 tb_viterbi_readmemb.dut.active tb_viterbi_readmemb.dut.bm_a00 tb_viterbi_readmemb.dut.bm_a01 tb_viterbi_readmemb.dut.bm_a10 tb_viterbi_readmemb.dut.bm_a11 tb_viterbi_readmemb.dut.bm_b00 tb_viterbi_readmemb.dut.bm_b01 tb_viterbi_readmemb.dut.bm_b10 tb_viterbi_readmemb.dut.bm_b11 tb_viterbi_readmemb.dut.clk tb_viterbi_readmemb.dut.dec_even tb_viterbi_readmemb.dut.dec_odd tb_viterbi_readmemb.dut.dec_s0 tb_viterbi_readmemb.dut.dec_s1 tb_viterbi_readmemb.dut.dec_s3 tb_viterbi_readmemb.dut.dec_s4 tb_viterbi_readmemb.dut.dec_s5 tb_viterbi_readmemb.dut.dec_s6 tb_viterbi_readmemb.dut.dec_s7 tb_viterbi_readmemb.dut.en tb_viterbi_readmemb.dut.i_data tb_viterbi_readmemb.dut.load_frame tb_viterbi_readmemb.dut.o_data tb_viterbi_readmemb.dut.o_done tb_viterbi_readmemb.dut.output_cycle tb_viterbi_readmemb.dut.pair_a tb_viterbi_readmemb.dut.pair_b tb_viterbi_readmemb.dut.pm00 tb_viterbi_readmemb.dut.pm01 tb_viterbi_readmemb.dut.pm10 tb_viterbi_readmemb.dut.pm11 tb_viterbi_readmemb.dut.pm_mid00 tb_viterbi_readmemb.dut.pm_mid01 tb_viterbi_readmemb.dut.pm_mid10 tb_viterbi_readmemb.dut.pm_mid11 tb_viterbi_readmemb.dut.pm_new00 tb_viterbi_readmemb.dut.pm_new01 tb_viterbi_readmemb.dut.pm_new10 tb_viterbi_readmemb.dut.pm_new11 tb_viterbi_readmemb.dut.rst_n tb_viterbi_readmemb.dut.rx_reg tb_viterbi_readmemb.dut.state tb_viterbi_readmemb.dut.tb_out
+Created probe 1
+xcelium> run
+xmsim: *W,RMEMNOF: $readmem error: open failed on file "Viterbi_input_error.txt".
+            File: ./tb_viterbi_readmemb.v, line = 38, pos = 53
+           Scope: tb_viterbi_readmemb
+            Time: 0 FS + 0
+
+xmsim: *W,RMEMNOF: $readmem error: open failed on file "Viterbi_output_error.txt".
+            File: ./tb_viterbi_readmemb.v, line = 39, pos = 53
+           Scope: tb_viterbi_readmemb
+            Time: 0 FS + 0
+
+FAIL idx=0 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=1 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=2 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=3 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=4 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=5 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=6 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=7 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=8 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=9 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=10 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=11 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=12 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=13 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=14 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=15 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=16 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=17 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+FAIL idx=18 coded=xxxxxxxxxxxxxxxx exp=xxxxxxxx got=xxxxxx00
+RESULT pass=0 fail=1024 total=1024
+Simulation complete via $finish(1) at time 35872500 PS + 0
+./tb_viterbi_readmemb.v:71         $finish;
+xcelium> ^C
+xcelium> exit
+...Regained control from Verisium Debug/SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.09-s004: Exiting on May 17, 2026 at 16:16:24 +07  (total: 00:05:57)

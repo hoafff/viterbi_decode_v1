@@ -1,0 +1,385 @@
+[05/17 16:51:48      0s] 
+[05/17 16:51:48      0s] Cadence Innovus(TM) Implementation System.
+[05/17 16:51:48      0s] Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/17 16:51:48      0s] 
+[05/17 16:51:48      0s] Version:	v23.37-s090_1, built Mon Feb 9 16:09:58 PST 2026
+[05/17 16:51:48      0s] Options:	-stylus 
+[05/17 16:51:48      0s] Date:		Sun May 17 16:51:48 2026
+[05/17 16:51:48      0s] Host:		iclab (x86_64 w/Linux 4.18.0-553.111.1.el8_10.x86_64) (8cores*32cpus*Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz 40960KB)
+[05/17 16:51:48      0s] OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+[05/17 16:51:48      0s] 
+[05/17 16:51:48      0s] License:
+[05/17 16:51:48      0s] 		[16:51:48.483785] Configured Lic search path (23.02-s006): /home/cadence/license/license.dat
+[05/17 16:51:48      0s] 
+[05/17 16:51:48      0s] 		invs	Innovus Implementation System	23.1	checkout succeeded
+[05/17 16:51:48      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/17 16:52:09     41s] Memory management switch to non-aggressive memory release mode.
+[05/17 16:52:09     41s] 
+[05/17 16:52:09     41s] OS Mmap count monitoring thread starts. Limit of OS Mmap count is 65530
+[05/17 16:52:09     41s] 
+[05/17 16:52:09     42s] 
+[05/17 16:52:09     42s] 
+[05/17 16:52:12     48s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v23.37-s090_1 (64bit) 02/09/2026 16:09 (Linux 3.10.0-693.el7.x86_64)
+[05/17 16:52:17     53s] @(#)CDS: NanoRoute 23.37-s090_1 NR260126-2134/23_17-UB (database version 18.20.682_1) {superthreading v2.20}
+[05/17 16:52:17     53s] @(#)CDS: AAE 23.17-s025 (64bit) 02/09/2026 (Linux 3.10.0-693.el7.x86_64)
+[05/17 16:52:17     53s] @(#)CDS: CTE 23.17-s038_1 () Feb  4 2026 22:23:13 ( )
+[05/17 16:52:17     53s] @(#)CDS: SYNTECH 23.17-s006_1 () Jan 20 2026 01:15:57 ( )
+[05/17 16:52:17     53s] @(#)CDS: CPE v23.17-s060
+[05/17 16:52:17     53s] @(#)CDS: IQuantus/TQuantus 23.1.1-s583 (64bit) Mon Nov 24 21:09:39 PST 2025 (Linux 3.10.0-693.el7.x86_64)
+[05/17 16:52:17     53s] @(#)CDS: OA 22.61-p027 Wed May 14 22:25:16 2025
+[05/17 16:52:17     53s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[05/17 16:52:17     53s] @(#)CDS: RCDB 11.15.0
+[05/17 16:52:17     53s] @(#)CDS: STYLUS 23.16-s001_1 (07/11/2025 08:51 PDT)
+[05/17 16:52:17     53s] @(#)CDS: IntegrityPlanner-23.17-17130 (23.17) (2025-12-03 09:08:16+0800)
+[05/17 16:52:17     53s] @(#)CDS: SYNTHESIS_ENGINE 23.17-s085
+[05/17 16:52:17     53s] Create and set the environment variable TMPDIR to /home/iclab6/Desktop/viterbi/physical_design/innovus_temp_69389_c3463e12-2510-4469-97d5-83976c0c171b_iclab_iclab6_8Yx7cI.
+
+[05/17 16:52:17     53s] Create and set the environment variable TMPDIR to /home/iclab6/Desktop/viterbi/physical_design/innovus_temp_69389_c3463e12-2510-4469-97d5-83976c0c171b_iclab_iclab6_8Yx7cI.
+[05/17 16:52:17     53s] 
+[05/17 16:52:17     53s] Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+[05/17 16:52:20     57s] Info: Process UID = 69389 / c3463e12-2510-4469-97d5-83976c0c171b / 4NeFk4xgzK
+[05/17 16:52:20     57s] 
+[05/17 16:52:20     57s] **INFO:  MMMC transition support version v31-84 
+[05/17 16:52:20     57s] 
+[05/17 16:52:26     62s] @innovus 1> set_db init_power_nets VDD
+[05/17 16:56:28     95s] @innovus 2> set_db init_ground_nets VSS
+[05/17 16:56:28     95s] @innovus 3> #################################
+[05/17 16:56:28     95s] read_mmmc viterbi_mmmc.view
+[05/17 16:56:28     95s] #################################
+[05/17 16:56:28     95s] #@ Begin verbose source viterbi_mmmc.view (pre)
+[05/17 16:56:28     95s] @@file 1: create_library_set -name max_timing \
+[05/17 16:56:28     95s]     -timing ../lib/sky130_ss_1.62_125_nldm.lib
+[05/17 16:56:28     95s] @file 3:
+[05/17 16:56:28     95s] @@file 4: create_library_set -name min_timing \
+[05/17 16:56:28     95s]     -timing ../lib/sky130_ff_1.98_0_nldm.lib
+[05/17 16:56:28     95s] @file 6:
+[05/17 16:56:28     95s] @@file 7: create_timing_condition -name default_mapping_tc_1 \
+[05/17 16:56:28     95s]     -library_sets max_timing
+[05/17 16:56:28     95s] @file 9:
+[05/17 16:56:28     95s] @@file 10: create_timing_condition -name default_mapping_tc_2 \
+[05/17 16:56:28     95s]     -library_sets min_timing
+[05/17 16:56:28     95s] @file 12:
+[05/17 16:56:28     95s] @@file 13: create_rc_corner -name rccorners\
+[05/17 16:56:28     95s]     -pre_route_res 1\
+[05/17 16:56:28     95s]     -pre_route_cap 1\
+[05/17 16:56:28     95s]     -post_route_res 1\
+[05/17 16:56:28     95s]     -post_route_cap 1\
+[05/17 16:56:28     95s]     -post_route_cross_cap 1\
+[05/17 16:56:28     95s]     -pre_route_clock_res 0\
+[05/17 16:56:28     95s]     -pre_route_clock_cap 0\
+[05/17 16:56:28     95s]     -qrc_tech ../qrc/qrcTechFile_RCgen
+[05/17 16:56:28     95s] @file 22:
+[05/17 16:56:28     95s] @@file 23: create_delay_corner -name max_delay\
+[05/17 16:56:28     95s]     -timing_condition default_mapping_tc_1\
+[05/17 16:56:28     95s]     -rc_corner rccorners
+[05/17 16:56:28     95s] @file 26:
+[05/17 16:56:28     95s] @@file 27: create_delay_corner -name min_delay\
+[05/17 16:56:28     95s]     -timing_condition default_mapping_tc_2\
+[05/17 16:56:28     95s]     -rc_corner rccorners
+[05/17 16:56:28     95s] @file 30:
+[05/17 16:56:28     95s] @@file 31: create_constraint_mode -name sdc_cons\
+[05/17 16:56:28     95s]     -sdc_files viterbi_sdc.sdc
+[05/17 16:56:28     95s] @file 33:
+[05/17 16:56:28     95s] @@file 34: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+[05/17 16:56:28     95s] @@file 35: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+[05/17 16:56:28     95s] @file 36:
+[05/17 16:56:28     95s] @@file 37: set_analysis_view -setup wc -hold bc
+[05/17 16:56:28     95s] #@ End verbose source viterbi_mmmc.view
+[05/17 16:56:28     95s] Reading max_timing timing library '/home/iclab6/Desktop/viterbi/lib/sky130_ss_1.62_125_nldm.lib' ...
+[05/17 16:56:29     95s] Read 112 cells in library 'sky130_ss_1.62_125' 
+[05/17 16:56:29     95s] Reading min_timing timing library '/home/iclab6/Desktop/viterbi/lib/sky130_ff_1.98_0_nldm.lib' ...
+[05/17 16:56:29     96s] Read 112 cells in library 'sky130_ff_1.98_0' 
+[05/17 16:56:29     96s] Ending "PreSetAnalysisView" (total cpu=0:00:01.1, real=0:00:01.0, peak res=1974.3M, current mem=1909.2M)
+[05/17 16:56:29     96s] #################################
+[05/17 16:56:29     96s] read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}
+[05/17 16:56:29     96s] #################################
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] Loading LEF file ../lef/sky130_scl_9T.tlef ...
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] Loading LEF file ../lef/sky130_scl_9T.lef ...
+[05/17 16:56:29     96s] Set DBUPerIGU to M2 pitch 460.
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] Loading LEF file ../lef/sky130_scl_9T_phyCells.lef ...
+[05/17 16:56:29     96s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/17 16:56:29     96s] Type 'man IMPLF-200' for more detail.
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] ##  Check design process and node:  
+[05/17 16:56:29     96s] ##  Both design process and tech node are not set.
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] #################################
+[05/17 16:56:29     96s] read_netlist viterbi_netlist.v
+[05/17 16:56:29     96s] #################################
+[05/17 16:56:29     96s] #% Begin Load netlist data ... (date=05/17 16:56:29, mem=1917.3M)
+[05/17 16:56:29     96s] *** Begin netlist parsing (mem=1885.5M) ***
+[05/17 16:56:29     96s] Created 112 new cells from 2 timing libraries.
+[05/17 16:56:29     96s] Reading netlist ...
+[05/17 16:56:29     96s] Backslashed names will retain backslash and a trailing blank character.
+[05/17 16:56:29     96s] Reading verilog netlist 'viterbi_netlist.v'
+[05/17 16:56:29     96s] 
+[05/17 16:56:29     96s] *** Memory Usage v#1 (Current mem = 1885.520M, initial mem = 866.945M) ***
+[05/17 16:56:29     96s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1885.5M) ***
+[05/17 16:56:29     96s] #% End Load netlist data ... (date=05/17 16:56:29, total cpu=0:00:00.1, real=0:00:00.0, peak res=1928.2M, current mem=1928.2M)
+[05/17 16:56:29     96s] Top level cell is viterbi_decoder.
+[05/17 16:56:29     96s] Hooked 224 DB cells to tlib cells.
+[05/17 16:56:30     96s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:01.0, peak res=1939.4M, current mem=1939.4M)
+[05/17 16:56:30     96s] Starting recursive module instantiation check.
+[05/17 16:56:30     96s] No recursion found.
+[05/17 16:56:30     96s] Building hierarchical netlist for Cell viterbi_decoder ...
+[05/17 16:56:30     96s] ***** UseNewTieNetMode *****.
+[05/17 16:56:30     96s] *** Netlist is unique.
+[05/17 16:56:30     96s] Setting Std. cell height to 4140 DBU (smallest netlist inst).
+[05/17 16:56:30     96s] ** info: there are 237 modules.
+[05/17 16:56:30     96s] ** info: there are 281 stdCell insts.
+[05/17 16:56:30     96s] ** info: there are 281 stdCell insts with at least one signal pin.
+[05/17 16:56:30     96s] 
+[05/17 16:56:30     96s] *** Memory Usage v#1 (Current mem = 1924.020M, initial mem = 866.945M) ***
+[05/17 16:56:30     96s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/17 16:56:30     96s] Type 'man IMPFP-3961' for more detail.
+[05/17 16:56:30     96s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/17 16:56:30     96s] Type 'man IMPFP-3961' for more detail.
+[05/17 16:56:30     96s] Start create_tracks
+[05/17 16:56:30     96s] Generated pitch 3.66 in met5 is different from 3.22 defined in technology file in preferred direction.
+[05/17 16:56:30     96s] Generated pitch 0.615 in met4 is different from 0.69 defined in technology file in preferred direction.
+[05/17 16:56:30     96s] Generated pitch 0.61 in met3 is different from 0.69 defined in technology file in preferred direction.
+[05/17 16:56:30     97s] Extraction setup Started for TopCell viterbi_decoder 
+[05/17 16:56:30     97s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/17 16:56:30     97s] eee: __QRC_SADV_USE_LE__ is set 0
+[05/17 16:56:30     97s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For post_route extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[05/17 16:56:30     97s] Generating auto layer map file.
+[05/17 16:56:30     97s] eee: cut Layer Id 33 mapped to tech Id 6 of Layer mcon 
+[05/17 16:56:30     97s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[05/17 16:56:30     97s] eee:       33	    mcon	        6	       mcon	Via            
+[05/17 16:56:30     97s] eee:        1	    met1	        7	     metal1	Metal          
+[05/17 16:56:30     97s] eee:       34	     via	        8	       via1	Via            
+[05/17 16:56:30     97s] eee:        2	    met2	        9	     metal2	Metal          
+[05/17 16:56:30     97s] eee:       35	    via2	       10	       via2	Via            
+[05/17 16:56:30     97s] eee:        3	    met3	       11	     metal3	Metal          
+[05/17 16:56:30     97s] eee:       36	    via3	       12	       via3	Via            
+[05/17 16:56:30     97s] eee:        4	    met4	       13	     metal4	Metal          
+[05/17 16:56:30     97s] eee:       37	    via4	       14	       via4	Via            
+[05/17 16:56:30     97s] eee:        5	    met5	       15	     metal5	Metal          
+[05/17 16:56:30     97s] eee: TechFile: ../qrc/qrcTechFile_RCgen
+[05/17 16:56:30     97s] eee: HoWee  : 0 0 0 0 0 
+[05/17 16:56:30     97s] eee: Erosn  : 0 0 0 0 0 
+[05/17 16:56:30     97s] eee: nrColor: 0 0 0 0 0 
+[05/17 16:56:31     97s] eee: Save / Restore of RC patterns enabled 
+[05/17 16:56:31     97s] eee: Pattern meta data file doesn't exist
+[05/17 16:56:31     97s] eee: Pattern data restore failed for 1 tech files
+[05/17 16:56:31     97s] eee: Pattern extraction started for 1 tech files
+[05/17 16:56:31     97s] Importing multi-corner technology file(s) for preRoute extraction...
+[05/17 16:56:31     97s] ../qrc/qrcTechFile_RCgen
+[05/17 16:56:31     97s] Generating auto layer map file.
+[05/17 16:56:31      0s] eee: cut Layer Id 33 mapped to tech Id 6 of Layer mcon 
+[05/17 16:56:31      0s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[05/17 16:56:31      0s] eee:       33	    mcon	        6	       mcon	Via            
+[05/17 16:56:31      0s] eee:        1	    met1	        7	     metal1	Metal          
+[05/17 16:56:31      0s] eee:       34	     via	        8	       via1	Via            
+[05/17 16:56:31      0s] eee:        2	    met2	        9	     metal2	Metal          
+[05/17 16:56:31      0s] eee:       35	    via2	       10	       via2	Via            
+[05/17 16:56:31      0s] eee:        3	    met3	       11	     metal3	Metal          
+[05/17 16:56:31      0s] eee:       36	    via3	       12	       via3	Via            
+[05/17 16:56:31      0s] eee:        4	    met4	       13	     metal4	Metal          
+[05/17 16:56:31      0s] eee:       37	    via4	       14	       via4	Via            
+[05/17 16:56:31      0s] eee:        5	    met5	       15	     metal5	Metal          
+[05/17 16:56:31      0s] eee: Total Patterns: 1612 xTiles: 41 yTiles: 42 25micronYTiles: 0(0x5)
+[05/17 16:56:31      0s] eee: MaxTileSize:131 design urx:5374 ury:5505
+[05/17 16:56:31      0s] eee: ViaCellPattern Id: 1611 ts: 1310800 yTile:39 
+
+[05/17 16:56:32     98s] eee: Pattern extraction completed
+[05/17 16:56:32     98s] eee: RC Grid memory allocated = 540 (3 X 3 X 5 X 12b)
+[05/17 16:56:32     98s] eee: pegSigSF=1.070000
+[05/17 16:56:32     98s] Completed (cpu: 0:00:01.3 real: 0:00:02.0)
+[05/17 16:56:32     98s] Set Shrink Factor to 1.00000
+[05/17 16:56:32     98s] Summary of Active RC-Corners : 
+[05/17 16:56:32     98s]  
+[05/17 16:56:32     98s]  Analysis View: wc
+[05/17 16:56:32     98s]     RC-Corner Name        : rccorners
+[05/17 16:56:32     98s]     RC-Corner Index       : 0
+[05/17 16:56:32     98s]     RC-Corner Temperature : 25 Celsius
+[05/17 16:56:32     98s]     RC-Corner Cap Table   : ''
+[05/17 16:56:32     98s]     RC-Corner PreRoute Res Factor         : 1
+[05/17 16:56:32     98s]     RC-Corner PreRoute Cap Factor         : 1
+[05/17 16:56:32     98s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/17 16:56:32     98s]     RC-Corner Technology file: '../qrc/qrcTechFile_RCgen'
+[05/17 16:56:32     98s]  
+[05/17 16:56:32     98s]  Analysis View: bc
+[05/17 16:56:32     98s]     RC-Corner Name        : rccorners
+[05/17 16:56:32     98s]     RC-Corner Index       : 0
+[05/17 16:56:32     98s]     RC-Corner Temperature : 25 Celsius
+[05/17 16:56:32     98s]     RC-Corner Cap Table   : ''
+[05/17 16:56:32     98s]     RC-Corner PreRoute Res Factor         : 1
+[05/17 16:56:32     98s]     RC-Corner PreRoute Cap Factor         : 1
+[05/17 16:56:32     98s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/17 16:56:32     98s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/17 16:56:32     98s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/17 16:56:32     98s]     RC-Corner Technology file: '../qrc/qrcTechFile_RCgen'
+[05/17 16:56:32     98s] Updating RC Grid density data for preRoute extraction ...
+[05/17 16:56:32     98s] Initializing multi-corner resistance tables ...
+[05/17 16:56:32     98s] eee: Grid unit RC data computation started
+[05/17 16:56:32     98s] eee: Grid unit RC data computation completed
+[05/17 16:56:32     98s] eee: l=1 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[05/17 16:56:32     98s] eee: l=2 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[05/17 16:56:32     98s] eee: l=3 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[05/17 16:56:32     98s] eee: l=4 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[05/17 16:56:32     98s] eee: l=5 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[05/17 16:56:32     98s] {RT rccorners 0 2 5  {4 0} 1}
+[05/17 16:56:32     98s] eee: LAM-FP: thresh=1 ; dimX=178.173913 ; dimY=162.000000 ; multX=1.000000 ; multY=1.000000 ; minP=460 ; fpMult=1.000000 ;
+[05/17 16:56:32     98s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 pModAss=50 wcR=0.332500 crit=0.000000 siPrev=0 newSi=0.000000 wHLS=1.000000 viaL=0.000000 shortMod=0.000000 fModUnas=0.000000 fModAs=0.000000 pDens=0.500000 
+[05/17 16:56:32     98s] eee: NetCapCache creation started. (Current Mem: 2293.230M) 
+[05/17 16:56:32     98s] eee: NetCapCache completed. (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  Curr Mem: 2293.230M) 
+[05/17 16:56:32     98s] eee: dbu = 1000, Design = [ll(0.000000, 0.000000) ur(81.960000, 74.520000)], Layers = [f(5) b(0)], Grid size = 41.400000 um, Grid Dim = (2 X 2)
+[05/17 16:56:32     98s] eee: Metal Layers Info:
+[05/17 16:56:32     98s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[05/17 16:56:32     98s] eee: |   Layer  |  Id |    W    |    S    |    P    |   uC   |   uR   | D | T | wS |
+[05/17 16:56:32     98s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[05/17 16:56:32     98s] eee: |     met1 |   1 |   0.140 |   0.140 |   0.460 |  0.181 |   0.89 | H | 0 |  1 |
+[05/17 16:56:32     98s] eee: |     met2 |   2 |   0.140 |   0.140 |   0.460 |  0.182 |   0.89 | V | 0 |  1 |
+[05/17 16:56:32     98s] eee: |     met3 |   3 |   0.300 |   0.300 |   0.610 |  0.335 |   0.16 | H | 0 |  1 |
+[05/17 16:56:32     98s] eee: |     met4 |   4 |   0.300 |   0.300 |   0.615 |  0.311 |   0.16 | V | 0 |  1 |
+[05/17 16:56:32     98s] eee: |     met5 |   5 |   1.600 |   1.600 |   3.660 |  0.260 |   0.02 | H | 0 |  1 |
+[05/17 16:56:32     98s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[05/17 16:56:32     98s] eee: uC/uR for corner rccorners, min-width/min-spacing, 30 perc over/under densities.
+[05/17 16:56:32     98s] eee: +-----------------------NDR Info-----------------------+
+[05/17 16:56:32     98s] eee: NDR Count = 0, Fake NDR = 0
+[05/17 16:56:32     98s] Default value for post_route extraction mode's extract_rc_effort_level (extract_rc_effort_level option of set_db) changed to 'medium'.
+[05/17 16:56:32     98s] *Info: initialize multi-corner CTS.
+[05/17 16:56:32     98s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2407.2M, current mem=2002.9M)
+[05/17 16:56:33     99s] Reading timing constraints file 'viterbi_sdc.sdc' ...
+[05/17 16:56:33     99s] Current (total cpu=0:01:40, real=0:04:45, peak res=2585.0M, current mem=2585.0M)
+[05/17 16:56:33     99s] viterbi_decoder
+[05/17 16:56:33     99s] INFO (CTE): Constraints read successfully.
+[05/17 16:56:33     99s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2599.6M, current mem=2599.6M)
+[05/17 16:56:33     99s] Current (total cpu=0:01:40, real=0:04:45, peak res=2599.6M, current mem=2599.6M)
+[05/17 16:56:33     99s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/17 16:56:33     99s] 
+[05/17 16:56:33     99s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/17 16:56:33     99s] Summary for sequential cells identification: 
+[05/17 16:56:33     99s]   Identified SBFF number: 16
+[05/17 16:56:33     99s]   Identified MBFF number: 0
+[05/17 16:56:33     99s]   Identified SB Latch number: 2
+[05/17 16:56:33     99s]   Identified MB Latch number: 0
+[05/17 16:56:33     99s]   Not identified SBFF number: 0
+[05/17 16:56:33     99s]   Not identified MBFF number: 0
+[05/17 16:56:33     99s]   Not identified SB Latch number: 0
+[05/17 16:56:33     99s]   Not identified MB Latch number: 0
+[05/17 16:56:33     99s]   Number of sequential cells which are not FFs: 6
+[05/17 16:56:33     99s] Total number of combinational cells: 85
+[05/17 16:56:33     99s] Total number of sequential cells: 24
+[05/17 16:56:33     99s] Total number of tristate cells: 3
+[05/17 16:56:33     99s] Total number of level shifter cells: 0
+[05/17 16:56:33     99s] Total number of power gating cells: 0
+[05/17 16:56:33     99s] Total number of isolation cells: 0
+[05/17 16:56:33     99s] Total number of power switch cells: 0
+[05/17 16:56:33     99s] Total number of pulse generator cells: 0
+[05/17 16:56:33     99s] Total number of always on buffers: 0
+[05/17 16:56:33     99s] Total number of retention cells: 0
+[05/17 16:56:33     99s] Total number of physical cells: 0
+[05/17 16:56:33     99s] List of usable buffers: CLKBUFX2 BUFX2 CLKBUFX4 BUFX4 CLKBUFX8 BUFX8 BUFX16
+[05/17 16:56:33     99s] Total number of usable buffers: 7
+[05/17 16:56:33     99s] List of unusable buffers:
+[05/17 16:56:33     99s] Total number of unusable buffers: 0
+[05/17 16:56:33     99s] List of usable inverters: INVX2 INVX1 CLKINVX2 CLKINVX1 INVX4 CLKINVX4 INVX8 CLKINVX8 INVX16
+[05/17 16:56:33     99s] 
+[05/17 16:56:33     99s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[05/17 16:56:33     99s] Total number of usable inverters: 9
+[05/17 16:56:33     99s] List of unusable inverters:
+[05/17 16:56:33     99s] Total number of unusable inverters: 0
+[05/17 16:56:33     99s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X4 DLY4X4
+[05/17 16:56:33     99s] Total number of identified usable delay cells: 4
+[05/17 16:56:33     99s] List of identified unusable delay cells:
+[05/17 16:56:33     99s] Total number of identified unusable delay cells: 0
+[05/17 16:56:33     99s] 
+[05/17 16:56:33     99s] TimeStamp Deleting Cell Server Begin ...
+[05/17 16:56:33     99s] 
+[05/17 16:56:33     99s] TimeStamp Deleting Cell Server End ...
+[05/17 16:56:34     99s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:01.0, peak res=2619.3M, current mem=2619.3M)
+[05/17 16:56:34     99s] 
+[05/17 16:56:34     99s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/17 16:56:34     99s] Summary for sequential cells identification: 
+[05/17 16:56:34     99s]   Identified SBFF number: 16
+[05/17 16:56:34     99s]   Identified MBFF number: 0
+[05/17 16:56:34     99s]   Identified SB Latch number: 2
+[05/17 16:56:34     99s]   Identified MB Latch number: 0
+[05/17 16:56:34     99s]   Not identified SBFF number: 0
+[05/17 16:56:34     99s]   Not identified MBFF number: 0
+[05/17 16:56:34     99s]   Not identified SB Latch number: 0
+[05/17 16:56:34     99s]   Not identified MB Latch number: 0
+[05/17 16:56:34     99s]   Number of sequential cells which are not FFs: 6
+[05/17 16:56:34     99s]  Visiting view : wc
+[05/17 16:56:34     99s]    : PowerDomain = none : Weighted F : unweighted  = 64.10 (1.000) with rcCorner = 0
+[05/17 16:56:34     99s]    : PowerDomain = none : Weighted F : unweighted  = 51.30 (1.000) with rcCorner = -1
+[05/17 16:56:34     99s]  Visiting view : bc
+[05/17 16:56:34     99s]    : PowerDomain = none : Weighted F : unweighted  = 30.00 (1.000) with rcCorner = 0
+[05/17 16:56:34     99s]    : PowerDomain = none : Weighted F : unweighted  = 21.60 (1.000) with rcCorner = -1
+[05/17 16:56:34     99s] TLC MultiMap info (StdDelay):
+[05/17 16:56:34     99s]   : min_delay + min_timing + 1 + no RcCorner := 21.6ps
+[05/17 16:56:34     99s]   : min_delay + min_timing + 1 + rccorners := 30ps
+[05/17 16:56:34     99s]   : max_delay + max_timing + 1 + no RcCorner := 51.3ps
+[05/17 16:56:34     99s]   : max_delay + max_timing + 1 + rccorners := 64.1ps
+[05/17 16:56:34     99s]  Setting StdDelay to: 64.1ps
+[05/17 16:56:34     99s] 
+[05/17 16:56:34     99s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/17 16:56:34     99s] 
+[05/17 16:56:34     99s] TimeStamp Deleting Cell Server Begin ...
+[05/17 16:56:34     99s] 
+[05/17 16:56:34     99s] TimeStamp Deleting Cell Server End ...
+[05/17 16:56:34    100s] #################################
+[05/17 16:56:34    100s] read_mmmc viterbi_mmmc.view
+[05/17 16:56:34    100s] #################################
+[05/17 16:56:34    100s] **WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+[05/17 16:56:36    101s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc viterbi_mmmc.view'.For more details, refer to error message from console.
+[05/17 16:56:36    101s] 
+[05/17 16:56:36    101s] #################################
+[05/17 16:56:36    101s] read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}
+[05/17 16:56:36    101s] #################################
+[05/17 16:56:36    101s] **ERROR: (IMPIMEX-7030):	LEF files are not allowed to be read in after the design is in memory. If you want to modify the current list of LEF files, please refer to read_physical -add_lefs**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/sky130_scl_9T.tlef ../lef/sky130_scl_9T.lef ../lef/sky130_scl_9T_phyCells.lef}'.For more details, refer to error message from console.
+[05/17 16:56:37    101s] 
+[05/17 16:56:37    101s] #################################
+[05/17 16:56:37    101s] read_netlist viterbi_netlist.v
+[05/17 16:56:37    101s] #################################
+[05/17 16:56:39    102s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist viterbi_netlist.v'.For more details, refer to error message from console.
+[05/17 16:56:39    102s] 
+[05/17 16:56:39    102s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[05/17 16:56:39    102s] The MMMC init sequence looks like this: 
+[05/17 16:56:39    102s] read_mmmc top.mmmc 
+[05/17 16:56:39    102s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[05/17 16:56:39    102s] read_netlist top.v 
+[05/17 16:56:39    102s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[05/17 16:56:39    102s] init_design 
+[05/17 16:56:39    102s] 
+[05/17 16:56:39    102s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[05/17 16:56:39    102s] read_libs all.lib 
+[05/17 16:56:39    102s] read_netlist top.v 
+[05/17 16:56:39    102s] read_sdc top.sdc 
+[05/17 16:56:39    102s] init_design 
+[05/17 16:56:39    102s] 
+[05/17 16:56:39    102s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[05/17 16:56:39    102s] Common UI User Guide for more details.
+exit
+[05/17 17:02:03    122s] 
+[05/17 17:02:03    122s] *** Summary of all messages that are not suppressed in this session:
+[05/17 17:02:03    122s] Severity  ID               Count  Summary                                  
+[05/17 17:02:03    122s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/17 17:02:03    122s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[05/17 17:02:03    122s] ERROR     IMPSYT-16031         3  %s                                       
+[05/17 17:02:03    122s] ERROR     IMPIMEX-7041         1  Netlist files are not allowed to be read...
+[05/17 17:02:03    122s] ERROR     IMPIMEX-12           1  'init_design' failed. You are missing on...
+[05/17 17:02:03    122s] ERROR     IMPIMEX-7030         1  LEF files are not allowed to be read in ...
+[05/17 17:02:03    122s] WARNING   TCLCMD-1306          1  read_mmmc command should be called once ...
+[05/17 17:02:03    122s] *** Message Summary: 4 warning(s), 6 error(s)
+[05/17 17:02:03    122s] 
+[05/17 17:02:03    122s] 
+[05/17 17:02:03    122s] *** Memory Usage v#1 (Current mem = 2621.988M, initial mem = 866.945M) ***
+[05/17 17:02:03    122s] --- Ending "Innovus" (totcpu=0:02:03, real=0:10:15, mem=2622.0M) ---

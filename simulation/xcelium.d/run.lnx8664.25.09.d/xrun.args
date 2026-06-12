@@ -1,0 +1,15 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+add_comp_slt.v
+control.v
+memory.v
+traceback.v
+branch_metric.v
+extract_bit.v
+tb_viterbi_readmemb.v
+viterbi_decoder.v
+-access
++rwc
+-gui
